@@ -1,14 +1,16 @@
 // start
-
+var headerElem = document.getElementById("js-headerElement");
 var newGameElem = document.getElementById("js-newGameElement");
 var pickElem = document.getElementById("js-playerPickElement");
 var resultsElem = document.getElementById("js-resultsTableElement");
 
 var gameState = "notStarted";
+
 var player = {
     name: "",
     score: 0
 };
+
 var computer = {
     score: 0
 };
@@ -17,20 +19,24 @@ var computer = {
 function setGameElements() {
     switch(gameState) {
         case "started":
+        headerElem.style.diplay = "none";
         newGameElem.style.display = "none";
         pickElem.style.display = "block";
         resultsElem.style.display = "block";
         break;
         case "ended":
-        newGameBtn.innerText = "Play again";
+        headerElem.style.diplay = "block";
+        newGameBtn.textContent = "Play again";
         case "notStarted":
         default:
         newGameElem.style.display = "block";
+        headerElem.style.diplay = "block";
         pickElem.style.display = "none";
         resultsElem.style.display = "none";
   }
 }
 
+setGameElements();
 
 //new game
 
@@ -103,13 +109,13 @@ function checkRoundWinner(playerPick, computerPick) {
     }
 
     if (winnerIs == "player") {
-        playerResultElem.innerHTML = "Win!";
+        playerResultElem.textContent = "Win!";
         player.score++;
-        setGamePoints()
+        setGamePoints();
     } else if (winnerIs == "computer") {
-        computerResultElem.innerHTML = "Win!";
+        computerResultElem.textContent = "Win!";
         computer.score++;
-        setGamePoints()
+        setGamePoints();
     }
     checkGoal();
 
@@ -126,13 +132,13 @@ function setGamePoints() {
 
 function checkGoal() {
     if (player.score == 10) {
-        playerResultElem.innerHTML +=  "And the winner is " + player.name;
+        playerResultElem.textContent +=  " And the winner is " + player.name;
         gameState = "ended";
-        delayedEnd = setTimeout(setGameElements, 5000);
+        delayedEnd = setTimeout(setGameElements, 3000);
     }
     else if (computer.score == 10) {
-        computerResultElem.innerHTML += "Computer won this time!";
+        computerResultElem.innerHTML += " Computer won this time!";
         gameState = "ended";
-         delayedEnd = setTimeout(setGameElements, 5000);
+         delayedEnd = setTimeout(setGameElements, 3000);
     }
 }

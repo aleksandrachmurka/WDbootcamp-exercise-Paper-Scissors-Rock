@@ -1,0 +1,22 @@
+.header {
+	margin: 7%;
+}
+
+.pick .btn {
+	margin: 5%;
+}
+
+.players {
+	margin-bottom: 5%;
+}
+#js-playerName {
+	color: green;
+}
+
+#js-playerResult {
+	color: green;
+}
+
+#js-computerResult {
+	color: red;
+}

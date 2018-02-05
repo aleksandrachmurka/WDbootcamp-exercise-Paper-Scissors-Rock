@@ -4,26 +4,29 @@
 	<meta charset="UTF-8">
 	<title>Paper-Scissors-Rock</title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="style.css" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" />
 </head>
 <body>
-	<div class="container">
+	<div id="js-headerElement" class="container header">
   		<h3 class="text-center">
     	Welcome to the game
+    	<br>
+    	<br>
     	<span class="label label-default">Rock</span>
     	<span class="label label-info">Paper</span>
     	<span class="label label-danger">Scissors</span>
   		</h3>
 	</div>
-	<div id="js-newGameElement" class="container">
+	<div id="js-newGameElement" class="container new">
   		<div class="row text-center">
-    		<button  id="js-newGameButton" class="btn btn-default">
+    		<button  id="js-newGameButton" class="btn btn-success">
       		New game
     		</button>
   		</div>
 	</div>
 
-	<div id="js-playerPickElement" class="container">
+	<div id="js-playerPickElement" class="container pick">
   		<div class="row text-center">
     		<button id="js-playerPick_rock" class="btn">
       			<span class="badge">
@@ -47,23 +50,25 @@
 	</div>
 
 	<div id="js-resultsTableElement" class="container">
-  		<div class="row">
+  		<div class="row players">
     		<div class="col-xs-5 text-center">
+    			<span id="js-playerName">
+      			Player Name
+      			</span>
+      			<br>
       			<span id="js-playerPoints" class="badge">
       			0
-      			</span>
-      			<span id="js-playerName">
-      			Player Name
       			</span>
     		</div>
     		<div class="col-xs-2 text-center">
       			VS.
    			</div>
    			<div class="col-xs-5 text-center">
+   				computer
+   				<br>
       			<span id="js-computerPoints" class="badge">
       			0
       			</span>
-      			Computer
     		</div>
   		</div>
   		<div class="row">
