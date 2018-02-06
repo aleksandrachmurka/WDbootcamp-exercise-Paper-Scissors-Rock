@@ -19,13 +19,13 @@ var computer = {
 function setGameElements() {
     switch(gameState) {
         case "started":
-        headerElem.style.diplay = "none";
+        headerElem.style.display = "none";
         newGameElem.style.display = "none";
         pickElem.style.display = "block";
         resultsElem.style.display = "block";
         break;
         case "ended":
-        headerElem.style.diplay = "block";
+        headerElem.style.display = "block";
         newGameBtn.textContent = "Play again";
         case "notStarted":
         default:
