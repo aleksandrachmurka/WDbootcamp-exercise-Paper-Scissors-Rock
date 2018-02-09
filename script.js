@@ -3,6 +3,8 @@ var headerElem = document.getElementById("js-headerElement");
 var newGameElem = document.getElementById("js-newGameElement");
 var pickElem = document.getElementById("js-playerPickElement");
 var resultsElem = document.getElementById("js-resultsTableElement");
+var modal = $("#modal");
+var modalMessage = document.getElementById("modalMessage");
 
 var gameState = "notStarted";
 
@@ -132,13 +134,17 @@ function setGamePoints() {
 
 function checkGoal() {
     if (player.score == 10) {
-        playerResultElem.textContent +=  " And the winner is " + player.name;
+        // playerResultElem.textContent +=  " And the winner is " + player.name;
+        modal.modal("show");
+        modalMessage.textContent += player.name;
         gameState = "ended";
         delayedEnd = setTimeout(setGameElements, 3000);
     }
     else if (computer.score == 10) {
-        computerResultElem.innerHTML += " Computer won this time!";
+        // computerResultElem.innerHTML += " Computer won this time!";
+        modal.modal("show");
+        modalMessage.textContent += "Computer";
         gameState = "ended";
-         delayedEnd = setTimeout(setGameElements, 3000);
+        delayedEnd = setTimeout(setGameElements, 3000);
     }
 }
